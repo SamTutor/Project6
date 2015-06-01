@@ -8,7 +8,7 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
-<!--- $(function() { -->
+ $(function() {
 
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
@@ -37,15 +37,15 @@
          */
 
         //test all the feeds and makes sure each has a URL defined and URL is not empty
-       	for (var x=0; x<=allFeeds.length-1; x++) {
-	        it('Feed '+ x +': URL defined and not empty', function() {
-	       	    for (var y=0; y<=allFeeds.length-1; y++) {
-				    expect(allFeeds[y].url).tobeDefined;
-				    expect(allFeeds[y].url.length).not.toBe(0);
-			    };
+       	for (var x1=0; x1<=allFeeds.length-1; x1++) {
+	        it('Feed '+ x1 +': URL defined and not empty', function() {
+	       	    for (var y=0; y1<=allFeeds.length-1; y1++) {
+				    expect(allFeeds[y1].url).tobeDefined;
+				    expect(allFeeds[y1].url.length).not.toBe(0);
+			    }
 	        });
 
-       	};
+       	}
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -53,14 +53,14 @@
          */
 
         //test all the feeds and makes sure each has a Name defined and Name is not empty
-        for (var x=0; x<=allFeeds.length-1; x++) {
-	        it('Feed '+ x +': NAME defined and not empty', function() {
-	   		    for (var x=0; x<=allFeeds.length-1; x++) {
-				    expect(allFeeds[x].name).tobeDefined;
-				    expect(allFeeds[x].name.length).not.toBe(0);
-        	    };
+        for (var x2=0; x2<=allFeeds.length-1; x2++) {
+	        it('Feed '+ x2 +': NAME defined and not empty', function() {
+	   		    for (var y2=0; y2<=allFeeds.length-1; y2++) {
+				    expect(allFeeds[y2].name).tobeDefined;
+				    expect(allFeeds[y2].name.length).not.toBe(0);
+        	    }
             });
-    	};
+    	}
     });
 
 
@@ -92,7 +92,7 @@
         //assumes the menuIcon has been clicked and the menu is opened
         if (menuIcon.click()) {
             console.log(menuIcon.click());
-            menuvisible = "true" //menu is visible
+            menuvisible = "true"; //menu is visible
         }
 
         it('is displayed When clicked', function() {
@@ -102,7 +102,7 @@
         //assumes the menuIcon has been clicked again and the menu is closed
         if (!menuIcon.click()) {
             console.log(menuIcon.click());
-            menuvisible = "false" //menu is invisible as the menu Icon is click again to close it
+            menuvisible = "false"; //menu is invisible as the menu Icon is click again to close it
         }
 
         it('is not displayed when clicked again', function() {
@@ -163,9 +163,4 @@
 		       expect(NewFeed).not.toBe(InitialFeed);
 	        });
     });
-
-
-
-
-
-<!--- }()); -->
+}());
