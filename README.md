@@ -38,5 +38,7 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 7. Test that there is at least a single .entry element within the .feed container. 
 8. Test that ensures when a new feed is loaded by the loadFeed function that the content actually changes. 
 
-# View the test result
+# Running the Tests
+1. You can run the app directly via this link http://htmlpreview.github.io/?https://rawgit.com/samauto/Project6/master/index.html
 
+2. You can click the Download Zip button which will download the files to your computer where you can run it from your PC etc or upload it to your own website
