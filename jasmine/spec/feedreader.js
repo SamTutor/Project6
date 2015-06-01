@@ -39,7 +39,7 @@
         //test all the feeds and makes sure each has a URL defined and URL is not empty
        	for (var x1=0; x1<=allFeeds.length-1; x1++) {
 	        it('Feed '+ x1 +': URL defined and not empty', function() {
-	       	    for (var y=0; y1<=allFeeds.length-1; y1++) {
+	       	    for (var y1=0; y1<=allFeeds.length-1; y1++) {
 				    expect(allFeeds[y1].url).tobeDefined;
 				    expect(allFeeds[y1].url.length).not.toBe(0);
 			    }
