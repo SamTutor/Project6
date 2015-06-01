@@ -1,0 +1,6 @@
+Sources referred to
+www.w3schools.com
+www.stackoverflow.com
+Jasmine GitHub Documentation 
+class discussion Board etc
+
