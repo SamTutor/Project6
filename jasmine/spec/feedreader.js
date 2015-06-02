@@ -22,20 +22,20 @@
         // Test all the feeds and makes sure each has a URL defined and URL is not empty
         for (var x1 = 0; x1 <= allFeeds.length-1; x1++) {
 	        it('Feed '+ x1 +': URL defined and not empty', function() {
-	        for (var y1 = 0; y1 <= allFeeds.length-1; y1++) {
+	            for (var y1 = 0; y1 <= allFeeds.length-1; y1++) {
 		        expect(allFeeds[y1].url).tobeDefined;
 		        expect(allFeeds[y1].url.length).not.toBe(0);
-		    }
+		        }
 	        });
         }
 
         // Test all the feeds and makes sure each has a Name defined and Name is not empty
         for (var x2 = 0; x2 <= allFeeds.length-1; x2++) {
             it('Feed '+ x2 +': NAME defined and not empty', function() {
-  	        for (var y2 = 0; y2 <= allFeeds.length-1; y2++) {
+  	            for (var y2 = 0; y2 <= allFeeds.length-1; y2++) {
 		        expect(allFeeds[y2].name).tobeDefined;
 		        expect(allFeeds[y2].name.length).not.toBe(0);
-        	}
+        	    }
             });
         }
 
@@ -56,6 +56,11 @@
         var menuIcon = $('.menu-icon-link'); //where the mouse needs to click to open the menu
         menuIcon.click(); //simulates a mouse click on the menuicon
 
+        // After the Menu Test the Menu is reset to its initial state which is hidden
+        afterEach(function() {
+         	menuIcon.click();
+        });
+
         // Assumes the menuIcon has been clicked and the menu is opened
         if (menuIcon.click()) {
             menuVisible = "true"; //menu is visible
@@ -73,6 +78,7 @@
         it('is not displayed when clicked again', function() {
             expect(menuVisible).toBeTruthy();
         });
+
 
     });
 
@@ -107,7 +113,6 @@
    	    //Test to ensire when a new feed is loaded by the loadFeed function that the content actually changes
        	var initialFeed, //The default feed of the News Feed
    	        newFeed, //hold the contents of the new feed
-            nn=0; //initialize the variable to 0
 
      	beforeEach(function (done) {
      	    loadFeed(0, function() {
@@ -120,7 +125,7 @@
        		newFeed = $('.feed').html();
        	    expect(newFeed).not.toBe(initialFeed);
        	});
-   
+
     });
 
 }());
