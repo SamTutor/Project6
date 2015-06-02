@@ -20,9 +20,9 @@
         });
 
         // Test all the feeds and makes sure each has a URL defined and URL is not empty
-       	for (var x1=0; x1<=allFeeds.length-1; x1++) {
+       	for (var x1 = 0; x1 <= allFeeds.length-1; x1++) {
 	    it('Feed '+ x1 +': URL defined and not empty', function() {
-	        for (var y1=0; y1<=allFeeds.length-1; y1++) {
+	        for (var y1 = 0; y1 <= allFeeds.length-1; y1++) {
 		    expect(allFeeds[y1].url).tobeDefined;
 		    expect(allFeeds[y1].url.length).not.toBe(0);
 		}
@@ -30,9 +30,9 @@
        	}
 
         // Test all the feeds and makes sure each has a Name defined and Name is not empty
-        for (var x2=0; x2<=allFeeds.length-1; x2++) {
+        for (var x2 = 0; x2 <= allFeeds.length-1; x2++) {
             it('Feed '+ x2 +': NAME defined and not empty', function() {
-  	        for (var y2=0; y2<=allFeeds.length-1; y2++) {
+  	        for (var y2 = 0; y2 <= allFeeds.length-1; y2++) {
 		    expect(allFeeds[y2].name).tobeDefined;
 		    expect(allFeeds[y2].name.length).not.toBe(0);
         	}
