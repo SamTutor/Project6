@@ -112,7 +112,7 @@
 
    	    //Test to ensire when a new feed is loaded by the loadFeed function that the content actually changes
        	var initialFeed, //The default feed of the News Feed
-   	        newFeed, //hold the contents of the new feed
+   	        newFeed; //hold the contents of the new feed
 
      	beforeEach(function (done) {
      	    loadFeed(0, function() {
@@ -120,6 +120,7 @@
      	        loadFeed(1, done);
      	    });
   		});
+
 
        	it('New Feed is loaded and the content changes', function() {
        		newFeed = $('.feed').html();
