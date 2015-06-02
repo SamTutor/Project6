@@ -51,28 +51,28 @@
 	});
 
 	// Test to ensure the menu changes visibility when the menu icon is clicked
-        var menuvisible; //is menu visible or not visible
+        var menuVisible; //is menu visible or not visible
         var menuIcon = $('.menu-icon-link'); //where the mouse needs to click to open the menu
         menuIcon.click(); //simulates a mouse click on the menuicon
 
         // Assumes the menuIcon has been clicked and the menu is opened
         if (menuIcon.click()) {
             console.log(menuIcon.click());
-            menuvisible = "true"; //menu is visible
+            menuVisible = "true"; //menu is visible
         }
 
         it('is displayed When clicked', function() {
-            expect(menuvisible).toBeTruthy();
+            expect(menuVisible).toBeTruthy();
         });
 
         // Assumes the menuIcon has been clicked again and the menu is closed
         if (!menuIcon.click()) {
             console.log(menuIcon.click());
-            menuvisible = "false"; //menu is invisible as the menu Icon is click again to close it
+            menuVisible = "false"; //menu is invisible as the menu Icon is click again to close it
         }
 
         it('is not displayed when clicked again', function() {
-            expect(menuvisible).toBeTruthy();
+            expect(menuVisible).toBeTruthy();
         });
     });
 
@@ -95,7 +95,7 @@
 	});
 
     	it('There is at least a single entry element within the feed container', function() {
-	    entry_element = $('.entry').html();
+	    entry_element = $('.feed .entry').html();
 	    expect(entry_element.length).toBeGreaterThan(0);
 	});
     });
@@ -105,8 +105,8 @@
     describe('New Feed Selection: ', function() {
 
    	//Test to ensire when a new feed is loaded by the loadFeed function that the content actually changes
-       	var InitialFeed= $('.header-title').html(), //The default feed of the News Feed
-   	    NewFeed, //hold the contents of the new feed
+       	var initialFeed= $('.header-title').html(), //The default feed of the News Feed
+   	    newFeed, //hold the contents of the new feed
             nn=0; //initialize the variable to 0
 
 
@@ -115,8 +115,8 @@
        	});
 
      	it('When Feed is Loaded the content changes', function() {
-     	    NewFeed = $('.header-title').html();
-	    expect(NewFeed).not.toBe(InitialFeed);
+     	    newFeed = $('.header-title').html();
+	    expect(newFeed).not.toBe(initialFeed);
 	});
     });
     
